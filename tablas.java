@@ -76,14 +76,14 @@ public class tablas extends JFrame implements ActionListener{
 		
 
 		String data[][]= {
-				{"1","tacos","$12.00"},
-				{"2","tamales","$10.00"},
-				{"3","tortas","$35.00"},
-				{"4","Cochito","$45.00"}
+				{"1","Quesadilla","$12.00"},
+				{"2","Chilaquiles","$10.00"},
+				{"3","Hamburguesa","$35.00"},
+				{"4","Empanadas","$45.00"}
 		};
 		String label []= {"ID","NOMBRE","PRECIO"};
 		
-		model= new DefaultTableModel (data,label);//creacion del modelo de la tabla
+		model= new DefaultTableModel (data,label);
 		tabla=new JTable(model);
 		tabla.setCellSelectionEnabled(true);		
 		selection();
@@ -100,10 +100,7 @@ public class tablas extends JFrame implements ActionListener{
 			public void valueChanged(ListSelectionEvent e) {
 				String nombre=null;
 				String costo=null;
-				String Data=null;
 				int [] row=tabla.getSelectedRows();
-				int [] columns=tabla.getSelectedColumns();
-				
 				for(int i=0;i<row.length;i++) {
 						nombre=(String) tabla.getValueAt(row[i],1);
 						costo=(String) tabla.getValueAt(row[i],2);
@@ -115,10 +112,7 @@ public class tablas extends JFrame implements ActionListener{
 			}
 		});
 	}
-public void addRow (String str1, String str2, String str3) {
-				
-	
-}
+
 	@Override 
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==eliminar) {
